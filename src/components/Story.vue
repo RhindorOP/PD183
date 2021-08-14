@@ -1,17 +1,11 @@
 <template>
 	<v-container class="black" fluid pa-0>
 		<v-sheet class="mx-auto" v-for="i in len" :key="i" max-width="750px" style="position:relative">
-			<v-img :src="require('../assets/'+i+'.jpg')" eager style="z-index: 0" />
+			<v-img :src="require('../assets/'+i+'.jpg')" eager style="z-index: 0"/>
 			<v-img
-				:src="require('../assets/'+i+'Clean.png')"
+				:src="require('../assets/'+i+'TL.png')"
 				style="z-index: 1; position:absolute; top:0"
 				v-if="num"
-				eager
-			/>
-			<v-img
-				:src="require('../assets/'+i+'Text.png')"
-				style="z-index: 2; position:absolute; top:0"
-				v-if="num == 2"
 				eager
 			/>
 		</v-sheet>

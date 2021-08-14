@@ -27,12 +27,12 @@
 					<div class="d-none d-sm-flex mr-2">Peerless Dad</div>
 					<div class="d-flex d-sm-none mr-2">PD</div>183
 				</div>
-				<v-btn color="blue darken-1" @click="switchimg()">{{curimg}}</v-btn>
+				<v-btn @click="switchimg()" :color="num ? 'blue darken-1' : 'green darken-1'">{{curimg}}</v-btn>
 			</v-card>
 		</v-app-bar>
 
 		<v-main>
-			<Story :num="num" />
+			<Story :num="num"/>
 		</v-main>
 	</v-app>
 </template>
@@ -44,20 +44,17 @@ export default {
 	name: "App",
 	components: { Story },
 	data: () => ({
-		num: 2,
-		curimg: "TL",
+		num: 1,
+		curimg: "MTL",
 	}),
 	methods: {
 		switchimg() {
-			if (this.num == 0) {
-				this.num = 1;
-				this.curimg = "CLEAN";
-			} else if (this.num == 1) {
-				this.num = 2;
-				this.curimg = "TL";
-			} else {
+			if (this.num == 1) {
 				this.num = 0;
 				this.curimg = "RAW";
+			} else {
+				this.num = 1;
+				this.curimg = "MTL";
 			}
 		},
 	},
